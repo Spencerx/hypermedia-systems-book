@@ -2,7 +2,7 @@
 
 # https://github.com/edemaine/topp/blob/b6c4f5a53e1e3d54196204bb7b50046d83ae0f47/netlify-pandoc.sh
 
-PANDOC_URL="https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb"
+PANDOC_URL="https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb"
 
 set -o errexit
 
