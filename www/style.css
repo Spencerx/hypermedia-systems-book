@@ -5,6 +5,7 @@
   font-family: "Hypersystem";
   src: url("/fonts/Hypersystem.ttf") format("truetype");
   -subfont-text: '3456789X';
+  size-adjust: 50%;
 }
 
 @font-face {
