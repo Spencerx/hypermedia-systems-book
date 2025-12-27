@@ -1,6 +1,6 @@
 // Based on in-dexter by Rolf Bremer, Jutta Klebe
 
-#let is-pandoc = type(sys.version) != version
+#let is-pandoc = "typst-hs-version" in sys.inputs
 
 #let index(..content) = if is-pandoc {
   //
