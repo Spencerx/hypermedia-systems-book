@@ -62,3 +62,11 @@ find-overlong-code-lines:
     /```/   { code = !code } \
     /.{74}/ { if (code) print FILENAME ":" NR " " $0 } \
   ' % | less
+
+# Run the Web 1.0 contact app (chapters 1-3)
+run-web10:
+  cd code/ch03-web10 && uv run --with flask flask run
+
+# Run the full htmx contact app (chapters 7-11)
+run-full:
+  cd code/ch10-full && uv run --with flask flask run

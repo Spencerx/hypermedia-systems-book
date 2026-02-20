@@ -15,18 +15,13 @@ Each snapshot is a self-contained Flask application. To run one:
 
 ```
 cd code/ch03-web10          # or ch10-full
-uv run flask run
+uv run --with flask flask run
 ```
 
-`uv run` will automatically create a virtual environment and install dependencies
-from `requirements.txt` on first use.
-
-If you prefer to manage the environment yourself:
+Or from the project root using just:
 
 ```
-uv venv
-uv pip install -r requirements.txt
-uv run flask run
+just run-web10              # or run-full
 ```
 
 Then open http://127.0.0.1:5000 in your browser.
