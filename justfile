@@ -26,6 +26,9 @@ build-epub:
   mkdir -p {{ out_dir }}
   pandoc HypermediaSystems-ebook.typ -o {{ out_dir }}/HypermediaSystems.epub -M title="Hypermedia Systems" --css lib/epub.css --metadata-file lib/epub.yaml --epub-cover-image=images/cover.png
 
+build-kindle: build-epub
+  ebook-convert {{ out_dir }}/HypermediaSystems.epub {{ out_dir }}/HypermediaSystems.azw3
+
 typst-fonts:
   typst fonts {{ typst_flags }}
 
