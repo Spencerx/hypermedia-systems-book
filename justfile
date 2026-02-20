@@ -2,7 +2,7 @@
 typst_flags := "--font-path fonts"
 out_dir := "out"
 
-build: build-pdf build-epub
+build: build-pdf build-epub build-kindle
 
 format:
   typstfmt *.typ
