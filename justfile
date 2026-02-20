@@ -1,26 +1,30 @@
 
 typst_flags := "--font-path fonts"
+out_dir := "out"
 
-build: build-pdf build-html
+build: build-pdf build-epub
 
 format:
   typstfmt *.typ
 
 clean:
-  find  . -name '*.pdf' | xargs rm -rf
-  rm -rf _site
+  rm -rf {{ out_dir }} _site
 
 open-pdf:
-  typst compile {{ typst_flags }} --open HypermediaSystems.typ
+  mkdir -p {{ out_dir }}
+  typst compile {{ typst_flags }} --open HypermediaSystems.typ {{ out_dir }}/HypermediaSystems.pdf
 
 build-pdf:
-  typst compile {{ typst_flags }} HypermediaSystems.typ
+  mkdir -p {{ out_dir }}
+  typst compile {{ typst_flags }} HypermediaSystems.typ {{ out_dir }}/HypermediaSystems.pdf
 
 watch-pdf:
-  typst watch {{ typst_flags }} HypermediaSystems.typ
+  mkdir -p {{ out_dir }}
+  typst watch {{ typst_flags }} HypermediaSystems.typ {{ out_dir }}/HypermediaSystems.pdf
 
 build-epub:
-  pandoc HypermediaSystems-ebook.typ -o HypermediaSystems.epub -M title="Hypermedia Systems" --css lib/epub.css --metadata-file lib/epub.yaml --epub-cover-image=images/cover.png
+  mkdir -p {{ out_dir }}
+  pandoc HypermediaSystems-ebook.typ -o {{ out_dir }}/HypermediaSystems.epub -M title="Hypermedia Systems" --css lib/epub.css --metadata-file lib/epub.yaml --epub-cover-image=images/cover.png
 
 typst-fonts:
   typst fonts {{ typst_flags }}
