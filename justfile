@@ -26,6 +26,11 @@ build-epub:
   mkdir -p {{ out_dir }}
   pandoc HypermediaSystems-ebook.typ -o {{ out_dir }}/HypermediaSystems.epub -M title="Hypermedia Systems" --css lib/epub.css --metadata-file lib/epub.yaml --epub-cover-image=images/cover.png
 
+build-md:
+  mkdir -p {{ out_dir }}/md
+  cp -r images {{ out_dir }}/md/images
+  pandoc HypermediaSystems-ebook.typ -o {{ out_dir }}/md/HypermediaSystems.md -t markdown -M title="Hypermedia Systems"
+
 build-kindle: build-epub
   ebook-convert {{ out_dir }}/HypermediaSystems.epub {{ out_dir }}/HypermediaSystems.azw3
 
