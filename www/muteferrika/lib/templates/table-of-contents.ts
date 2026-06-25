@@ -43,9 +43,7 @@ export default /* html */`
 {{ /function }}
 
 <main>
-  <div class="toc-content">
-    {{ self.compiledContent |> safe }}
-  </div>
+  {{ self.compiledContent |> safe }}
   {{ recurse(self.book) }}
 </main>
 

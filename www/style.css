@@ -299,6 +299,17 @@ label {
     }
   }
 
+  #show-internal-contents:checked ~ ul {
+    &, ul {
+      column-width: auto;
+      column-count: 1;
+    }
+
+    ul.internal-contents {
+      display: block;
+    }
+  }
+
   a {
     text-decoration: none;
 
