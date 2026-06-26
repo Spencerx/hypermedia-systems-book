@@ -83,6 +83,10 @@ body {
   margin: 0;
 }
 
+html:not(.table-of-contents) main {
+  overflow-wrap: break-word;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--display);
   font-weight: normal;
@@ -131,6 +135,7 @@ header, footer {
 }
 
 pre {
+  overflow-wrap: normal;
   overflow-x: auto;
   margin-inline-end: calc((100% - 100vw) / 2);
   padding-block: .75em;
