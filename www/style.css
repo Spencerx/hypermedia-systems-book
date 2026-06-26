@@ -357,6 +357,10 @@ label {
 .division-toc {
   font-family: var(--secondary);
 
+  &:not(:has(ul)) {
+    display: none;
+  }
+
   summary {
     font-size: inherit;
     font-weight: bold;
